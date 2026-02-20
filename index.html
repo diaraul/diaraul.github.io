@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Text, Symbols, Emojis -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Websites Responsive, Fit To Screen -->
-    <!-- UP ABOVE IS STANDARD FOR HTML -->
-    <title>Raul Diaz | Portfolio</title>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Raul Diaz | Portfolio</title>
     <style>
         :root {
             --primary: #0077b5;             /* shades of color */
             --uo-green: #115740;            /* var(--uo-green) to call */
+            --uo-yellow: #fee123;           /* Added UO Yellow for accents */
             --bg: #f8fafc;
             --text: #1e293b;
         }
+
+        /* Entry Animation: Makes the page fade in and slide up */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         body {
             font-family: 'Inter', -apple-system, sans-serif; /* Use 'Inter' Default to sans-serif */
             line-height: 1.6;
@@ -20,45 +25,81 @@
             padding: 40px 20px;
             background-color: var(--bg);    /* background color off-white */
             color: var(--text);             /* text color black */
+            animation: fadeInUp 0.8s ease-out; /* page load effect */
         }
+
         h1, h2 { color: #0f172a; margin-bottom: 0.5rem; } /* Title Color */
-        header { border-bottom: 3px solid var(--uo-green); padding-bottom: 20px; margin-bottom: 40px; } /* Line Above */
+
+        header {
+            border-left: 8px solid var(--uo-green); /* Changed to side-border for modern look */
+            padding-left: 20px;
+            margin-bottom: 40px;
+        }
 
         /* Skills Pills */
         .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; } /* Creates Phone FLEXibility */
         .skill-tag {
-            background: #e2e8f0;            /* gap: 10px puts even space between each pill */
-            padding: 5px 15px;
-            border-radius: 20px;            /* makes them look like pills/bubbles */
+            background: white;
+            padding: 8px 18px;
+            border-radius: 50px;            /* makes them look like pills/bubbles */
             font-size: 0.9rem;
             font-weight: 600;
             color: var(--uo-green);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;      /* smooth transition for all properties */
+            cursor: default;
+        }
+        /* INTERACTIVE: Pills glow and change color on hover */
+        .skill-tag:hover {
+            background: var(--uo-green);
+            color: white;
+            box-shadow: 0 4px 12px rgba(17, 87, 64, 0.3);
+            transform: scale(1.05);         /* grows slightly */
         }
 
         /* Card Layout for Projects & Music */
         .card {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); /* shadow depth */
-            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 16px;            /* rounder corners for 2026 aesthetic */
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); /* subtle shadow */
+            margin-bottom: 25px;
             border: 1px solid #e2e8f0;
-            transition: transform 0.2s;                 /* smooth card */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* high-end "pop" movement */
         }
-        .card:hover { transform: translateY(-3px); }    /* mouse hover lifts card */
-        .card h3 { margin-top: 0; color: var(--primary); }
+        /* INTERACTIVE: Card lifts higher and shadow darkens */
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px -10px rgba(0,0,0,0.15);
+            border-color: var(--uo-green);   /* border changes to UO Green on hover */
+        }
+        .card h3 { margin-top: 0; color: var(--uo-green); }
 
-        /* Links */
+        /* Links Section */
+        .links { margin-top: 50px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
         .links a {
             text-decoration: none;          /* removes blue link color */
             color: var(--primary);
             font-weight: bold;
             margin-right: 15px;
-            border: 1px solid var(--primary);   ?/* box around link */
-            padding: 8px 16px;
-            border-radius: 6px;
+            display: inline-block;          /* allows movement/padding */
+            border: 2px solid var(--primary);/* box around link */
+            padding: 10px 22px;
+            border-radius: 8px;
+            transition: 0.3s;
         }
-        .links a:hover { background: var(--primary); color: white; } /* Hover to change color */
+        /* INTERACTIVE: Fill-in effect */
+        .links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);          /* button pop */
+        }
+
+        /* Responsive adjustments for phones */
+        @media (max-width: 600px) {
+            body { padding: 20px; }
+            .links a { width: 100%; margin-bottom: 10px; text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -79,12 +120,12 @@
         </div>
     </section>
 
-    <section>
+    <section style="margin-top: 40px;">
         <h2>Projects</h2>
         <div class="card">
             <h3>EchoSplit: Stem-Splitter</h3>
-            <p>An AI-driven audio processing tool designed to separate musical tracks into individual stems (vocals, drums, bass).</p>
-            <a href="https://github.com/diaraul/EchoSplit">View on GitHub →</a> /* -> */
+            <p>An AI-driven audio processing tool designed to separate musical tracks into individual stems (vocals, drums, bass). Built with Python and specialized for high-fidelity audio output.</p>
+            <a href="https://github.com/diaraul/EchoSplit" style="color: var(--primary); text-decoration: none; font-weight: bold;">View Project Details →</a>
         </div>
     </section>
 
@@ -92,7 +133,7 @@
         <h2>Extracurriculars</h2>
         <div class="card">
             <h3>Oregon Marching & Basketball Bands</h3>
-            <p>Member (2021-2023, 2024-2025). Contributing to the spirited atmosphere of UO Athletics through high-level musical performance.</p>
+            <p><strong>Trumpet Member</strong> (2021-2023, 2024-2025). Contributing to the spirited atmosphere of UO Athletics through high-level musical performance. Highlights include performing at the <strong>Alamo Bowl, Holiday Bowl & Rose Bowl</strong>.</p>
         </div>
     </section>
 
