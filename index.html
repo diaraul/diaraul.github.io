@@ -1,146 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Raul Diaz | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raul Diaz | Portfolio</title>
     <style>
         :root {
-            --primary: #0077b5;             /* shades of color */
-            --uo-green: #115740;            /* var(--uo-green) to call */
-            --uo-yellow: #fee123;           /* Added UO Yellow for accents */
-            --bg: #f8fafc;
-            --text: #1e293b;
+            --primary: #0077b5;             /* Professional Blue */
+            --uo-green: #115740;            /* UO Green */
+            --uo-yellow: #fee123;           /* UO Yellow accent */
+            --bg: #f8fafc;                  /* Light slate background */
+            --text: #1e293b;                /* Dark slate text */
+            --card-bg: #ffffff;
         }
 
-        /* Entry Animation: Makes the page fade in and slide up */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif; /* Use 'Inter' Default to sans-serif */
-            line-height: 1.6;
-            max-width: 850px;               /* prevents text stretching */
-            margin: 0 auto;                 /* centers website */
-            padding: 40px 20px;
-            background-color: var(--bg);    /* background color off-white */
-            color: var(--text);             /* text color black */
-            animation: fadeInUp 0.8s ease-out; /* page load effect */
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            line-height: 1.7;               /* Increased for readability */
+            max-width: 1000px;              /* Wider for grid layout */
+            margin: 0 auto;
+            padding: 60px 20px;
+            background-color: var(--bg);
+            color: var(--text);
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        h1, h2 { color: #0f172a; margin-bottom: 0.5rem; } /* Title Color */
-
+        /* NAVIGATION / HEADER */
         header {
-            border-left: 8px solid var(--uo-green); /* Changed to side-border for modern look */
-            padding-left: 20px;
-            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between; /* Keeps name left, subtitle right */
+            align-items: flex-end;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 30px;
+            margin-bottom: 50px;
+        }
+        .header-title h1 { font-size: 2.5rem; margin: 0; color: #0f172a; }
+        .header-title p { margin: 5px 0 0; font-size: 1.1rem; color: var(--uo-green); font-weight: 600; }
+
+        /* GRID SYSTEM for Projects and Info */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 25px;
+            margin-top: 20px;
         }
 
-        /* Skills Pills */
-        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; } /* Creates Phone FLEXibility */
+        h2 {
+            font-size: 1.5rem;
+            border-left: 5px solid var(--uo-green);
+            padding-left: 15px;
+            margin-top: 50px;
+        }
+
+        /* SKILLS SECTION */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
         .skill-tag {
             background: white;
-            padding: 8px 18px;
-            border-radius: 50px;            /* makes them look like pills/bubbles */
-            font-size: 0.9rem;
+            padding: 6px 16px;
+            border-radius: 8px;            /* Modern semi-rounded look */
+            font-size: 0.85rem;
             font-weight: 600;
-            color: var(--uo-green);
+            color: var(--text);
             border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;      /* smooth transition for all properties */
-            cursor: default;
-        }
-        /* INTERACTIVE: Pills glow and change color on hover */
-        .skill-tag:hover {
-            background: var(--uo-green);
-            color: white;
-            box-shadow: 0 4px 12px rgba(17, 87, 64, 0.3);
-            transform: scale(1.05);         /* grows slightly */
-        }
-
-        /* Card Layout for Projects & Music */
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 16px;            /* rounder corners for 2026 aesthetic */
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); /* subtle shadow */
-            margin-bottom: 25px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* high-end "pop" movement */
-        }
-        /* INTERACTIVE: Card lifts higher and shadow darkens */
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px -10px rgba(0,0,0,0.15);
-            border-color: var(--uo-green);   /* border changes to UO Green on hover */
-        }
-        .card h3 { margin-top: 0; color: var(--uo-green); }
-
-        /* Links Section */
-        .links { margin-top: 50px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
-        .links a {
-            text-decoration: none;          /* removes blue link color */
-            color: var(--primary);
-            font-weight: bold;
-            margin-right: 15px;
-            display: inline-block;          /* allows movement/padding */
-            border: 2px solid var(--primary);/* box around link */
-            padding: 10px 22px;
-            border-radius: 8px;
             transition: 0.3s;
         }
-        /* INTERACTIVE: Fill-in effect */
-        .links a:hover {
-            background: var(--primary);
-            color: white;
-            transform: scale(1.1);          /* button pop */
+        .skill-tag:hover {
+            border-color: var(--uo-green);
+            color: var(--uo-green);
+            transform: translateY(-2px);
         }
 
-        /* Responsive adjustments for phones */
-        @media (max-width: 600px) {
-            body { padding: 20px; }
-            .links a { width: 100%; margin-bottom: 10px; text-align: center; }
+        /* PROJECT CARDS */
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+        .card h3 { margin-top: 0; color: var(--uo-green); font-size: 1.25rem; }
+        .card p { font-size: 0.95rem; color: #475569; }
+
+        /* Links inside cards */
+        .card-link {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            margin-top: 15px;
+        }
+
+        /* FOOTER LINKS */
+        .links-bar {
+            background: #0f172a; /* Dark professional footer */
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 80px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .links-bar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .links-bar a:hover {
+            background: white;
+            color: #0f172a;
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            header { flex-direction: column; align-items: flex-start; }
+            .links-bar { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Raul Diaz</h1>
-        <p><strong>University of Oregon</strong> | Aspiring Data Scientist</p>
-    </header>
+        <div class="header-title">
+            <h1>Raul Diaz</h1>
+            <p>Data Scientist | University of Oregon '26</p>
+        </div>
+        </header>
 
     <section>
-        <h2>Technical Skills</h2>
+        <h2>Technical Arsenal</h2>
         <div class="skills-container">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">R</span>
+            <span class="skill-tag">Python (Pandas, NumPy, Scikit-learn)</span>
+            <span class="skill-tag">R Studio</span>
+            <span class="skill-tag">SQL</span>
             <span class="skill-tag">MATLAB</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">Scikit-learn</span>
-        </div>
-    </section>
-
-    <section style="margin-top: 40px;">
-        <h2>Projects</h2>
-        <div class="card">
-            <h3>EchoSplit: Stem-Splitter</h3>
-            <p>An AI-driven audio processing tool designed to separate musical tracks into individual stems (vocals, drums, bass). Built with Python and specialized for high-fidelity audio output.</p>
-            <a href="https://github.com/diaraul/EchoSplit" style="color: var(--primary); text-decoration: none; font-weight: bold;">View Project Details →</a>
+            <span class="skill-tag">Git / Version Control</span>
+            <span class="skill-tag">Data Visualization (Matplotlib, Tableau)</span>
         </div>
     </section>
 
     <section>
-        <h2>Extracurriculars</h2>
-        <div class="card">
-            <h3>Oregon Marching & Basketball Bands</h3>
-            <p><strong>Trumpet Member</strong> (2021-2023, 2024-2025). Contributing to the spirited atmosphere of UO Athletics through high-level musical performance. Highlights include performing at the <strong>Alamo Bowl, Holiday Bowl & Rose Bowl</strong>.</p>
+        <h2>Featured Projects</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div>
+                    <h3>EchoSplit: Stem-Splitter</h3>
+                    <p>Leveraging AI to deconstruct mixed audio into individual stems. Focuses on high-fidelity isolation for vocals and percussion.</p>
+                </div>
+                <a href="https://github.com/diaraul/EchoSplit" class="card-link">View Repository →</a>
+            </div>
+
+            <div class="card" style="border-style: dashed; opacity: 0.7;">
+                <div>
+                    <h3>Next Project Title</h3>
+                    <p>A brief 2-sentence description of the problem you solved and the tools you used (e.g., "Used SQL to analyze...").</p>
+                </div>
+                <span class="card-link">Coming Soon...</span>
+            </div>
         </div>
     </section>
 
-    <section class="links">
-        <h2>Connect</h2>
+    <section>
+        <h2>Leadership & Community</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div>
+                    <h3>Oregon Athletic Bands</h3>
+                    <p><strong>Trumpet Member</strong>. Represented the University at major venues including the <strong>Rose Bowl</strong> and <strong>Holiday Bowl</strong>. Managed high-intensity performance schedules while maintaining academic excellence.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Education & Coursework</h3>
+                    <p>Highlight relevant classes here: e.g., Statistical Methods, Machine Learning, or Advanced Biomechanics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="links-bar">
         <a href="https://linkedin.com/in/diaraul">LinkedIn</a>
         <a href="https://github.com/diaraul">GitHub</a>
-    </section>
+        <a href="mailto:your-email@uoregon.edu">Email Me</a>
+    </footer>
+
 </body>
 </html>
