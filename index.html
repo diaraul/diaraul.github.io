@@ -12,6 +12,7 @@
             --bg: #f8fafc;                  /* Light slate background */
             --text: #1e293b;                /* Dark slate text */
             --card-bg: #ffffff;
+            --border: #e2e8f0;
         }
 
         @keyframes fadeInUp {
@@ -21,8 +22,8 @@
 
         body {
             font-family: 'Inter', -apple-system, system-ui, sans-serif;
-            line-height: 1.7;               /* Increased for readability */
-            max-width: 1000px;              /* Wider for grid layout */
+            line-height: 1.6;               /* Increased for readability */
+            max-width: 900px;              /* Wider for grid layout */
             margin: 0 auto;
             padding: 60px 20px;
             background-color: var(--bg);
@@ -35,11 +36,11 @@
             display: flex;
             justify-content: space-between; /* Keeps name left, subtitle right */
             align-items: flex-end;
-            border-bottom: 2px solid #e2e8f0;
+            border-bottom: 2px solid var(--border);
             padding-bottom: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
-        .header-title h1 { font-size: 2.5rem; margin: 0; color: #0f172a; }
+        .header-title h1 { font-size: 2.5rem; margin: 0; color: #0f172a; letter-spacing: -0.02em; }
         .header-title p { margin: 5px 0 0; font-size: 1.1rem; color: var(--uo-green); font-weight: 600; }
 
         /* GRID SYSTEM for Projects and Info */
@@ -51,20 +52,24 @@
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
             border-left: 5px solid var(--uo-green);
             padding-left: 15px;
             margin-top: 50px;
+            margin-bottom: 20px;
         }
 
         /* SKILLS SECTION */
-        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
         .skill-tag {
             background: white;
             padding: 6px 16px;
-            border-radius: 8px;            /* Modern semi-rounded look */
+            border-radius: 6px;            /* Modern semi-rounded look */
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--text);
             border: 1px solid #e2e8f0;
             transition: 0.3s;
@@ -90,8 +95,8 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             transform: translateY(-5px);
         }
-        .card h3 { margin-top: 0; color: var(--uo-green); font-size: 1.25rem; }
-        .card p { font-size: 0.95rem; color: #475569; }
+        .card h3 { margin-top: 0; color: var(--uo-green); font-size: 1.2rem; }
+        .card p { font-size: 0.95rem; color: #475569; margin-bottom: 16px; }
 
         /* Links inside cards */
         .card-link {
@@ -100,6 +105,30 @@
             color: var(--primary);
             text-decoration: none;
             margin-top: 15px;
+        }
+
+        /* Coursework List Styling */
+        .course-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .course-list li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .course-list strong {
+            color: var(--uo-green);
+            display: block; /* Forces the description to a new line slightly */
+            margin-bottom: 2px;
+        }
+
+        .card-link {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
         }
 
         /* FOOTER LINKS */
@@ -176,25 +205,30 @@
         </div>
     </section>
 
-    <section>
-        <h2>Leadership & Community</h2>
+<section>
+        <h2>Education & Experience</h2>
         <div class="grid-container">
             <div class="card">
-                <div>
-                    <h3>Oregon Athletic Bands</h3>
-                    <p><strong>Marching/Basketball Band Trumpet</strong>. Represented the University at major venues
-                        including the <strong>Rose Bowl</strong>, <strong>Alamo Bowl</strong> and <strong>Holiday Bowl</strong>.
-                            Managed high-intensity performance schedules while maintaining academic excellence.</p>
-                </div>
+                <h3>Core Coursework</h3>
+                <ul class="course-list">
+                    <li>
+                        <strong>Statistics in Data Science</strong>
+                        Applied NumPy and SciPy for hypothesis testing and probability modeling.
+                    </li>
+                    <li>
+                        <strong>Machine Learning in Data Science</strong>
+                        Developed deep learning models in TensorFlow with a focus on ECE calibration.
+                    </li>
+                    <li>
+                        <strong>Principles and Techniques in Data Science</strong>
+                        Managed data lifecycles using Pandas, Matplotlib, and SQL querying.
+                    </li>
+                </ul>
             </div>
-
             <div class="card">
-                <div>
-                    <h3>Education & Coursework</h3>
-                    <p> <strong>Statistics in Data Science</strong> (Applied NumPy and SciPy for hypothesis testing, probability modeling, and distribution analysis.)
-                        <strong>Machine Learning in Data Science</strong> (Built deep learning models in TensorFlow and Scikit-learn, with a focus on ECE for model calibration.)
-                        <strong>Principles and Techniques in Data Science</strong> (Managed the data lifecycle using Pandas for manipulation, Matplotlib for EDA, and SQL for querying.)</p>
-                </div>
+                <h3>Leadership</h3>
+                <p><strong>Oregon Athletic Bands (Trumpet)</strong></p>
+                <p>Represented UO at the Rose Bowl, Alamo Bowl, and Holiday Bowl. Balanced 20+ hours of rehearsal/performance with a rigorous Data Science curriculum.</p>
             </div>
         </div>
     </section>
