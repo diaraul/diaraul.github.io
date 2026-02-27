@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Raul Diaz</title>
+    <style>
+        /* Using the same CSS variables as your main page */
+        :root {
+            --uo-green: #115740;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--uo-green);
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 2.5rem; color: #0f172a; margin-bottom: 10px; }
+        p { margin-bottom: 40px; color: #64748b; }
+
+        /* The Photo Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Keeps photos from looking stretched */
+            display: block;
+        }
+
+        .caption {
+            padding: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="../index.html" class="back-link">← Back to Portfolio</a>
+
+    <h1>Performance Gallery</h1>
+    <p>A collection of moments from the Rose Bowl, Alamo Bowl, and my time with the Oregon Athletic Bands.</p>
+
+    <div class="photo-grid">
+        <div class="photo-card">
+            <img src="Trumpet1.jpg" alt="Performing at the Rose Bowl">
+            <div class="caption">The Rose Bowl Stadium, 2024</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="Trumpet2.jpg" alt="Trumpet Section">
+            <div class="caption">Trumpet Section - Gameday</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="Trumpet3.JPG" alt="Trumpet Section">
+            <div class="caption">Trumpet Section - Gameday</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="Trumpet4.jpg" alt="Trumpet Section">
+            <div class="caption">Trumpet Section - Gameday</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="Trumpet5.jpg" alt="Trumpet Section">
+            <div class="caption">Trumpet Section - Gameday</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="Trumpet6.jpg" alt="Trumpet Section">
+            <div class="caption">Trumpet Section - Gameday</div>
+        </div>
+
+        </div>
+
+</body>
+</html>
